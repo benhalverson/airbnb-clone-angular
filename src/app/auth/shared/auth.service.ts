@@ -35,7 +35,7 @@ export class AuthService {
   }
 
   public register(userData: any) {
-    return this.http.post(`api/v1/users/register`, userData);
+    return this.http.post(`http://localhost:3000/api/v1/users/register`, userData);
   }
 
   public login(userData: any) {
