@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
 import { RentalComponent } from './rental/rental.component';
@@ -13,10 +14,15 @@ import { AuthModule } from './auth/auth.module';
 import { ManageModule } from './manage/manage.module';
 import { UserModule } from './user/user.module';
 
-const routes: Routes = [{ path: '', redirectTo: '/rentals', pathMatch: 'full' }];
+const routes: Routes = [
+  {path: '', component: RentalComponent}
+]
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent
+  ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
@@ -26,9 +32,9 @@ const routes: Routes = [{ path: '', redirectTo: '/rentals', pathMatch: 'full' }]
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     ManageModule,
-    UserModule,
+    UserModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
