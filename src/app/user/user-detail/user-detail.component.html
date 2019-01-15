@@ -1,0 +1,103 @@
+<div *ngIf="user" class="container bootstrap snippet">
+  <div class="row">
+    <div class="col-sm-8">
+      <h1>{{user.username}}</h1>
+    </div>
+    <div class="col-sm-4">
+      <h1>Revenue: {{user.revenue / 100}}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="text-center">
+        <img src="" class="avatar img-circle img-thumbnail" alt="avatar" />
+        <h6>Upload a different photo</h6>
+        <input type="file" class="text-center center-block file-upload">
+      </div>
+
+      <div class="panel panel-default">
+        <ul class="list-group">
+          <li class="list-group-item text-muted">Activity<i class="fa fa-dashboard fa-1x"></i></li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span>1</li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span>1</li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span>1</li>
+          <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span>1</li>
+        </ul>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Social Media</div>
+        <div class="panel-body">
+          <i class="fa fa-facebook fa-2x"></i>
+          <i class="fa fa-github fa-2x"></i>
+          <i class="fa fa-twitter fa-2x"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a href="#home" class="nav-link active" data-toggle="tab">Home</a></li>
+        <li class="nav-item"><a href="#settings" class="nav-link" data-toggle="tab">Settings</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane" id="home">
+          <form action="#" class="form">
+            <div class="form-group">
+              <div class="col-xs-6">
+                <label for="username">
+                  <h4>Username</h4>
+                </label>
+                <input [(ngModel)]="user.username" type="text" class="form-control" name="username" id="username"
+                  placeholder="First name" title="enter your first name if any">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-xs-6">
+                <label for="email">
+                  <h4>Email</h4>
+                </label>
+                <input [(ngModel)]="user.email" type="email" class="form-control" name="email" id="email" placeholder="Email"
+                  title="Enter your email">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-xs-12">
+                <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>Save</button>
+                <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i>Reset</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="tab-content" id="settings">
+        <form action="#" class="form">
+          <div class="form-group">
+            <div class="col-xs-6">
+              fill this in later...
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-xs-6">
+              fill this in later...
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-xs-12">
+              <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>Save</button>
+              <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i>Reset</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

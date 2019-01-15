@@ -1,0 +1,43 @@
+<section>
+  <div class="row">
+    <div class="col-md-5">
+      <h1 class="page-title">Login</h1>
+      <div *ngIf="notifyMessage" class="alert alert-success">
+        {{notifyMessage}}
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+          <div *ngIf="isInvalidForm('email')" class="alert alert-danger">
+
+            <div *ngIf="isRequired('email')">
+              Email is required.
+            </div>
+
+            <div *ngIf="loginForm.controls['email'].errors.pattern">
+              Must be valid email format!
+            </div>
+          </div>
+        </div>
+        <div class="formGroup">
+          <label for="password">Password</label>
+          <input type="password" class="formControl" id="password" formControlName="password">
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+
+      <div *ngIf="errors.length > 0" class="alert alert-danager">
+        <p *ngFor="let error of errors">
+          {{error.detail}}
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6 m1-auto">
+      <div class="image-container">
+        <h2 class="catchphrase">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, incidunt!</h2>
+        <img src="" alt="">
+      </div>
+    </div>
+  </div>
+</section>
