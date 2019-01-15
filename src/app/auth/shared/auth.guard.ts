@@ -10,7 +10,7 @@ export class AuthGuard implements CanActivate {
 
   private handleAuthState(): boolean {
     if(this.isLoginOrRegister()) {
-      this.route.navigate(['/rentals']);
+      // this.route.navigate(['/rentals']);
       return false;
     }
     

@@ -4,13 +4,12 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/rentals', pathMatch: 'full'}
+  { path: '', redirectTo: '/login', pathMatch: 'full'}
 ]
 @NgModule({
   declarations: [

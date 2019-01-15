@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
     debugger
     this.auth.login(this.loginForm.value).subscribe(
       token => {
-        this.router.navigate(['/rentals']);
+        this.router.navigate(['/test']);
       },
       errResponse => {
         this.errors = errResponse.error.errors;
