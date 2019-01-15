@@ -1,4 +1,4 @@
-// Not created yet import { Booking } from '../../booking/shared/booking.model';
+import { Booking } from '../../booking/shared/booking.model';
 export class Rental {
   static readonly CATEGORIES = ['house', 'apartment', 'condo'];
 
@@ -13,6 +13,6 @@ export class Rental {
   dailyRate: number;
   shared: boolean;
   createdAt: string;
-  //bookings: Booking[];
+  bookings: Booking[];
 
 }
