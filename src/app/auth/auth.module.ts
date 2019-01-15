@@ -7,15 +7,16 @@ import { AuthService } from './shared/auth.service';
 import { AuthGuard } from './shared/auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './shared/token.interceptor';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
-  // { path: 'register', component: RegisterComponent, canActivate: [AuthGuard]}
+  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard]}
 ]
 @NgModule({
   declarations: [
     LoginComponent,
-    // RegisterComponent
+    RegisterComponent
   ],
   imports: [
     RouterModule.forChild(routes),

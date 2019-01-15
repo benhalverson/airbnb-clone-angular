@@ -25,7 +25,7 @@ export class RentalService {
     return this.http.post('/api/v1/rentals', rental)
   }
 
-  public getUserRental() {
+  public getUserRentals() {
     return this.http.get('/api/v1/rentals/manage');
   }
 

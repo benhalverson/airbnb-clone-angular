@@ -1,30 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RouterModule, Routes } from '@angular/router';
-import { UserModule } from './user/user.module';
-import { AuthModule } from './auth/auth.module';
+import { HeaderComponent } from './common/header/header.component';
+import { RentalComponent } from './rental/rental.component';
 
-const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full'}
-]
+import { RentalModule } from './rental/rental.module';
+import { AuthModule } from './auth/auth.module';
+import { ManageModule } from './manage/manage.module';
+import { UserModule } from './user/user.module';
+
+const routes: Routes = [{ path: '', redirectTo: '/rentals', pathMatch: 'full' }];
+
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
     RouterModule.forRoot(routes),
+    BrowserModule,
+    RentalModule,
+    AuthModule,
+    NgbModule.forRoot(),
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    ManageModule,
     UserModule,
-    AuthModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
