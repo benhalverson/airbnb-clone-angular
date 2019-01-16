@@ -16,7 +16,7 @@ import { AuthGuard } from '../auth/shared/auth.guard';
 import { RentalComponent } from './rental.component';
 
 const routes: Routes = [
-  {path: 'test', component: RentalComponent,
+  {path: 'rentals', component: RentalComponent,
   children: [
     { path: '', component: RentalListComponent },
     { path: 'new', component: RentalCreateComponent, canActivate: [AuthGuard]},

@@ -1,3 +1,42 @@
-<p>
-  header works!
-</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a [routerLink]="['/rentals']" class="navbar-brand"></a>
+
+  <div class="form-inline">
+    <input #citySearch (keyup.enter)="search(citySearch.value)" class="form-control " type="search" placeholder="Search">
+    <button class="btn btn-outline-success" (click)="search(citySearch.value)">Search</button>
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <ng-container *ngIf="!auth.isAuthenticated()">
+          <li class="nav-item"><a [routerLink]="['/login']" class="nav-link">Login</a></li>
+          <li class="nav-item"><a [routerLink]="['/register']" class="nav-link">Register</a></li>
+      </ng-container>
+      
+      <ng-container *ngIf="auth.isAuthenticated()">
+        <li class="nav-item">
+          <a class="nav-link">{{auth.getUsername()}}</a>
+        </li>
+
+        <div class="nav-item dropdown clickable">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">
+            Owner Section
+          </a>
+          <div class="dropdown-menu">
+            <a [routerLink]="['/users/profile']" class="dropdown-item"></a>
+            <a [routerLink]="['/rentals/new']" class="dropdown-item"></a>
+            <a [routerLink]="['/manage/rentals']" class="dropdown-item"></a>
+            <a [routerLink]="['/manage/bookings']" class="dropdown-item"></a>
+          </div>
+        </div>
+        <li class="nav-item clickable">
+          <a (click)="logout()" class="nav-link">Logout</a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</nav>
