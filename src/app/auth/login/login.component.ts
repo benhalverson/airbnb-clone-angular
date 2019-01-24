@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    debugger;
     this.initForm();
 
     this.route.params.subscribe(params => {
@@ -52,7 +53,7 @@ export class LoginComponent implements OnInit {
     debugger
     this.auth.login(this.loginForm.value).subscribe(
       token => {
-        this.router.navigate(['/test']);
+        this.router.navigate(['/rentals']);
       },
       errResponse => {
         this.errors = errResponse.error.errors;

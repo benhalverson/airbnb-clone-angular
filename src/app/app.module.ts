@@ -15,7 +15,8 @@ import { ManageModule } from './manage/manage.module';
 import { UserModule } from './user/user.module';
 
 const routes: Routes = [
-  {path: '', component: RentalComponent}
+  // {path: '', component: RentalComponent}
+  { path: '', redirectTo: '/rentals', pathMatch: 'full'}
 ]
 
 @NgModule({

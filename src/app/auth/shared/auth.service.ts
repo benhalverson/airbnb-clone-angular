@@ -16,12 +16,14 @@ class DecodedToken {
   providedIn: 'root',
 })
 export class AuthService {
+  debugger;
   private decodedToken;
   constructor(private http: HttpClient) {
     this.decodedToken = JSON.parse(localStorage.getItem('meta')) || new DecodedToken();
   }
 
   private saveToken(token) {
+    debugger
     this.decodedToken = jwt.decodeToken(token);
 
     localStorage.setItem('auth', token);
@@ -31,18 +33,22 @@ export class AuthService {
   }
 
   private getExpiration() {
+    debugger
     return moment.unix(this.decodedToken.exp);
   }
 
   public register(userData: any) {
+    debugger
     return this.http.post(`http://localhost:3000/api/v1/users/register`, userData);
   }
 
   public login(userData: any) {
+    debugger
     return this.http.post(`http://localhost:3000/api/v1/users/auth`, userData).pipe(map((token: string) => this.saveToken(token)));
   }
 
   public logout() {
+    debugger
     localStorage.removeItem('auth');
     localStorage.removeItem('meta');
 
