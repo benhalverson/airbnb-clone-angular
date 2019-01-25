@@ -8,7 +8,6 @@ import { AuthGuard } from './shared/auth.guard';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './shared/token.interceptor';
 import { RegisterComponent } from './register/register.component';
-debugger;
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard]}

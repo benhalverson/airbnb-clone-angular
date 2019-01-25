@@ -1,0 +1,22 @@
+// @import '_variables';
+$main-color: #F44336;
+$main-text-color-gray: #484848;
+$light-gray: #e9e9e9;
+.navbar {
+  padding: 20px;
+  margin-bottom: 40px;
+
+  .search {
+    height: 50px;
+    width: 300px;
+  }
+
+  .navbar-brand {
+    margin-right: 30px;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: $main-color;
+    font-weight: 700;
+    position: relative;
+  }
+}

@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    debugger;
     this.initForm();
 
     this.route.params.subscribe(params => {
@@ -50,7 +49,6 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls[fieldName].errors.required;
   }
   login() {
-    debugger
     this.auth.login(this.loginForm.value).subscribe(
       token => {
         this.router.navigate(['/rentals']);
