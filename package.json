@@ -25,7 +25,7 @@
     "@ng-bootstrap/ng-bootstrap": "4.1.1",
     "angular-jwt": "0.1.11",
     "bootstrap": "4.2.1",
-    "core-js": "2.6.3",
+    "core-js": "2.6.5",
     "font-awesome": "4.7.0",
     "medium-draft": "0.5.10",
     "moment": "2.23.0",
