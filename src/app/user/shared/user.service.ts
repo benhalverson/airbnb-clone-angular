@@ -22,32 +22,41 @@ export class UserService {
 
   private parseJwt(token) {
     if (token) {
+
       const base64Url = token.split('.')[1];
       const base64 = base64Url.replace('-', '+').replace('_', '/');
-
+      console.log('base64Url', base64Url);
+      console.log('base64', base64);
+      debugger;
       return JSON.parse(window.atob(base64));
     }
     return {};
   }
 
   private getToken(): string {
+    
+    console.log('gettoken', this.token);
     if(this.token) {
       return this.token;
     }
 
     if(this.isAuthenticated()) {
-      return this.token = JSON.parse(localStorage.getItem('auth')).token;
+      // console.log('token', this.token);
+      console.log('localstorage', localStorage.getItem('auth'));
+      return this.token = JSON.parse(localStorage.getItem('auth')).auth;
     }
     return '';
   }
 
   public login(loginData: LoginData): Observable<any> {
+    console.log('login', loginData);
     return this.http.post('/api/v1/auth', loginData)
       .map(token => this.saveToken(token));
   }
 
   public logout(): Observable<any> {
     localStorage.removeItem('auth');
+    localStorage.removeItem('meta');
     this.token = '';
     this.username = '';
 
@@ -71,6 +80,8 @@ export class UserService {
   public getUsername(): string {
     if(this.username) {
       return this.username;
+    } else {
+      console.error('Unable to get username');
     }
     return this.username = this.parseJwt(this.getToken()).username;
   }

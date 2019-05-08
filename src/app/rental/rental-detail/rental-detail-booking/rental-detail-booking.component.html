@@ -1,0 +1,49 @@
+<div class="booking">
+  <h3 class="booking-price">${{rental.dailyRate}} <span class="booking-per-night">per night</span></h3>
+  <hr>
+  <ng-container *ngIf="auth.isAuthenticated()">
+    <label>Dates</label>
+    <input type="text" class="form-control daterangepicker-input" name="dateRange" daterangepicker [options]="options"
+      (selected)="selectedDate($event, daterange)" />
+    <div class="form-group">
+      <label for="guests" class="guests">Guests</label>
+      <input [(ngModel)]="newBooking.guests" class="form-control" type="number" id="guests" placeholder="" />
+    </div>
+    <button [disabled]="!newBooking.startAt || !newBooking.endingAt || !newBooking.guests" class="btn btn-confirm btn-block"
+      (click)="openModal(bookingModal)">Reserve place now</button>
+  </ng-container>
+  <div *ngIf="!auth.isAuthenticated()" class="should-login-btn-container">
+    <a class="btn btn-login" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login and book this place today!</a>
+  </div>
+  <p class="booking-note-title">People are interested in this house</p>
+  <p class="booking-note-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, esse!</p>
+</div>
+
+
+<!-- modal -->
+<ng-template #bookingModal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Confirm Booking <p>{{newBooking.startAt}} / {{newBooking.endAt}}</p></h4>
+    <button type="button" class="close" (click)="d('Cross click')">
+      <span>&time;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <em>{{newBooking.days}}</em> nights / 
+    <em>${{rental.dailyRate}} </em> per night
+    <p>Guests: <em>{{newBooking.guests}}</em></p>
+    <p>Price: <em>${{newBooking.totalPrice}}</em></p>
+    <p>Do you confirm booking for selected days?</p>
+  </div>
+  <div *ngIf="errors.length > 0" class="alert alert-danger modal-error">
+    <p *ngFor="let error of errors">
+      {{error.detail}}
+    </p>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn" (click)="confirmBooking(bookingModal)">Confirm</button>
+    <button #closeBtn type="button" class="btn" (click)="c('Close click')">Cancel</button>
+  </div>
+</ng-template>
+<!-- modal -->

@@ -39,7 +39,8 @@ export class AuthService {
   }
 
   public login(userData: any) {
-    return this.http.post(`http://localhost:3000/api/v1/users/auth`, userData).pipe(map((token: string) => this.saveToken(token)));
+    return this.http.post(`http://localhost:3000/api/v1/users/auth`, userData)
+      .pipe(map((token: string) => this.saveToken(token)));
   }
 
   public logout() {

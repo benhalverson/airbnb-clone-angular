@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RentalListComponent } from './rental-list/rental-list.component';
 import { RentalListItemComponent } from './rental-list-item/rental-list-item.component';
 import { RentalDetailComponent } from './rental-detail/rental-detail.component';
@@ -14,6 +15,8 @@ import { RentalService } from './shared/rental.service';
 import { RentalGuard } from './shared/rental.guard';
 import { AuthGuard } from '../auth/shared/auth.guard';
 import { RentalComponent } from './rental.component';
+import { RentalDetailBookingComponent } from './rental-detail/rental-detail-booking/rental-detail-booking.component';
+import { ToastrModule } from 'ngx-toastr';
 
 const routes: Routes = [
   {path: 'rentals', component: RentalComponent,
@@ -37,14 +40,17 @@ const routes: Routes = [
     RentalSearchComponent,
     RentalCreateComponent,
     RentalUpdateComponent,
-    RentalComponent
+    RentalComponent,
+    RentalDetailBookingComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
     NgPipesModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     RentalService,

@@ -5,9 +5,10 @@ export class Booking {
   _id: string;
   startAt: string;
   endAt: string;
-  totalPrice: string;
+  totalPrice: number;
   guest: number;
   days: number;
+  dailyRate: number;
   paymentToken: any;
   createdAt: string;
   rental: Rental;
