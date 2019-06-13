@@ -27,7 +27,7 @@
     "bootstrap": "4.3.1",
     "core-js": "3.1.0",
     "font-awesome": "4.7.0",
-    "medium-draft": "0.5.13",
+    "medium-draft": "0.5.15",
     "moment": "2.24.0",
     "ng2-daterangepicker": "2.0.12",
     "ng2-toastr": "4.1.2",
