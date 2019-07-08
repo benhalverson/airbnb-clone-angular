@@ -61,7 +61,7 @@
     "protractor": "5.4.2",
     "ts-node": "8.1.0",
     "tslint": "5.18.0",
-    "typescript": "3.4.5"
+    "typescript": "3.5.3"
   },
   "jest": {
     "preset": "jest-preset-angular",
