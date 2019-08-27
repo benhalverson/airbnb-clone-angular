@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, ViewChild, ViewContainerRef } from '@angular/core';
-import { ToastsManager } from 'ng2-toastr';
+// import { ToastsManager } from 'ng2-toastr';
 import { DaterangePickerComponent } from 'ng2-daterangepicker';
 import { Rental } from '../../shared/rental.model';
 import { Booking } from 'src/app/booking/shared/booking.model';
@@ -18,30 +18,30 @@ import { HelperService } from 'src/app/shared/service/helper.service';
 })
 export class RentalDetailBookingComponent implements OnInit {
   @Input() public rental: Rental;
-  @ViewChild(DaterangePickerComponent)
-  public picker: DaterangePickerComponent
+  // @ViewChild(DaterangePickerComponent)
+  public picker: DaterangePickerComponent;
   public daterange: any = {};
   public takenDates: any = [];
   public newBooking: Booking;
   public modalRef: any;
   public errors: any[];
-  public options: any = {
-    locale: { format: 'Y-MM-DD' },
-    alwaysShowCalendars: false,
-    opens: 'left',
-    isInvalidDate: this.checkForInvalidDates.bind(this),
-    autoUpdateInput: false,
-  };
+  // public options: any = {
+  //   locale: { format: 'Y-MM-DD' },
+  //   alwaysShowCalendars: false,
+  //   opens: 'left',
+  //   isInvalidDate: this.checkForInvalidDates.bind(this),
+  //   autoUpdateInput: false,
+  // };
 
   constructor(
     public helper: HelperService,
     public modalService: NgbModal,
     public bookingService: BookingService,
-    public toastr: ToastsManager,
+    // public toastr: ToastsManager,
     public vcr: ViewContainerRef,
     public auth: UserService
   ) {
-    this.toastr.setRootViewContainerRef(vcr);
+    // this.toastr.setRootViewContainerRef(vcr);
   }
 
   private computeTakenDates() {
@@ -88,7 +88,7 @@ export class RentalDetailBookingComponent implements OnInit {
     this.newBooking.startAt = moment(value.start).format('Y-MM-DD');
     this.newBooking.endAt = moment(value.end).format('Y-MM-DD');
     this.computeBookingValues();
-    this.options.autoUpdateInput = true;
+    // this.options.autoUpdateInput = true;
   }
 
   public confirmBooking(bookingModal) {
@@ -98,7 +98,7 @@ export class RentalDetailBookingComponent implements OnInit {
       this.newBooking = new Booking();
       this.fillTakenDates(data.startAt, data.endAt);
       this.resetDatePicker();
-      this.toastr.success('Booking succesfully created, you can check your booking details in manage section', 'Success!');
+      // this.toastr.success('Booking succesfully created, you can check your booking details in manage section', 'Success!');
       this.modalRef.close();
     }, (errorResponse: HttpErrorResponse) => {
       this.errors = errorResponse.error.errors;

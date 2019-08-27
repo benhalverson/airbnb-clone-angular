@@ -1,16 +1,36 @@
 <div class="booking">
-  <h3 class="booking-price">${{rental.dailyRate}} <span class="booking-per-night">per night</span></h3>
+  <h3 class="booking-price">${{rental.dailyRate}} 
+    <span class="booking-per-night">
+      per night
+    </span>
+  </h3>
   <hr>
   <ng-container *ngIf="auth.isAuthenticated()">
     <label>Dates</label>
-    <input type="text" class="form-control daterangepicker-input" name="dateRange" daterangepicker [options]="options"
+    <input 
+      type="text"
+      class="form-control daterangepicker-input" 
+      name="dateRange" 
+      daterangepicker 
+      [options]="options"
       (selected)="selectedDate($event, daterange)" />
     <div class="form-group">
-      <label for="guests" class="guests">Guests</label>
-      <input [(ngModel)]="newBooking.guests" class="form-control" type="number" id="guests" placeholder="" />
+      <label 
+        for="guests" 
+        class="guests">Guests
+      </label>
+      <input 
+        [(ngModel)]="newBooking.guests" 
+        class="form-control" 
+        type="number" 
+        id="guests" 
+        placeholder="" />
     </div>
-    <button [disabled]="!newBooking.startAt || !newBooking.endingAt || !newBooking.guests" class="btn btn-confirm btn-block"
-      (click)="openModal(bookingModal)">Reserve place now</button>
+    <button 
+      [disabled]="!newBooking.startAt || !newBooking.endingAt || !newBooking.guests"
+      class="btn btn-confirm btn-block"
+      (click)="openModal(bookingModal)">Reserve place now
+    </button>
   </ng-container>
   <div *ngIf="!auth.isAuthenticated()" class="should-login-btn-container">
     <a class="btn btn-login" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login and book this place today!</a>
@@ -23,7 +43,7 @@
 <!-- modal -->
 <ng-template #bookingModal let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title">Confirm Booking <p>{{newBooking.startAt}} / {{newBooking.endAt}}</p></h4>
+    <h4 class="modal-title">Confirm Booking <p>{{newBooking.startAt}} / {{newBooking.endingAt}}</p></h4>
     <button type="button" class="close" (click)="d('Cross click')">
       <span>&time;</span>
     </button>
