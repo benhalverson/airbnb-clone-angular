@@ -48,7 +48,7 @@
     "@types/jest": "23.3.14",
     "@types/node": "8.10.51",
     "codelyzer": "5.1.0",
-    "jasmine-core": "3.4.0",
+    "jasmine-core": "3.5.0",
     "jasmine-spec-reporter": "4.2.1",
     "jest": "24.9.0",
     "jest-preset-angular": "7.1.1",
