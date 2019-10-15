@@ -31,7 +31,7 @@
     "moment": "2.24.0",
     "ng2-daterangepicker": "2.0.12",
     "ng2-toastr": "4.1.2",
-    "ngx-image-cropper": "2.0.0",
+    "ngx-image-cropper": "2.0.2",
     "ngx-pipes": "2.5.6",
     "ngx-toastr": "11.1.1",
     "rxjs": "6.5.3",
