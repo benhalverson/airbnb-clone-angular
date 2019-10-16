@@ -6,7 +6,7 @@ export class Booking {
   startAt: string;
   endAt: string;
   totalPrice: number;
-  guest: number;
+  guests: number;
   days: number;
   dailyRate: number;
   paymentToken: any;

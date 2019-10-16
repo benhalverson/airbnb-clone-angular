@@ -43,9 +43,9 @@
 <!-- modal -->
 <ng-template #bookingModal let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title">Confirm Booking <p>{{newBooking.startAt}} / {{newBooking.endingAt}}</p></h4>
-    <button type="button" class="close" (click)="d('Cross click')">
-      <span>&time;</span>
+    <h4 class="modal-title">Confirm Booking <p>{{newBooking.startAt}} / {{newBooking.endAt}}</p></h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">

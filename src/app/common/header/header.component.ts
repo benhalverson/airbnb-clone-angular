@@ -23,4 +23,8 @@ export class HeaderComponent implements OnInit {
     )
   }
 
+  public search(city: any) {
+
+  }
+
 }
