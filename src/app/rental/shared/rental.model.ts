@@ -1,3 +1,4 @@
+import { User } from './../../user/shared/user.model';
 import { Booking } from '../../booking/shared/booking.model';
 export class Rental {
   static readonly CATEGORIES = ['house', 'apartment', 'condo'];
@@ -14,5 +15,5 @@ export class Rental {
   shared: boolean;
   createdAt: string;
   bookings: Booking[];
-
+  user: User;
 }

@@ -10,7 +10,7 @@
               id="username" required>
             <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
 
-              <div *ngIf="username.errors.required">
+              <div *ngIf="username.errors?.required">
                 Username is required.
               </div>
             </div>
