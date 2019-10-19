@@ -9,7 +9,7 @@ import { PaymentService } from 'src/app/payment/shared/payment.service';
   styleUrls: ['./manage-booking.component.scss']
 })
 export class ManageBookingComponent implements OnInit {
-  booking: Booking[];
+  bookings: Booking[];
   payments: any[];
 
   constructor(private bookingService: BookingService, private paymentService: PaymentService

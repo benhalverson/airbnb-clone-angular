@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RentalListComponent } from './rental-list/rental-list.component';
@@ -17,6 +17,7 @@ import { AuthGuard } from '../auth/shared/auth.guard';
 import { RentalComponent } from './rental.component';
 import { RentalDetailBookingComponent } from './rental-detail/rental-detail-booking/rental-detail-booking.component';
 import { ToastrModule } from 'ngx-toastr';
+import { Daterangepicker } from 'ng2-daterangepicker';
 
 const routes: Routes = [
   {path: 'rentals', component: RentalComponent,
@@ -50,12 +51,16 @@ const routes: Routes = [
     NgPipesModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    Daterangepicker
   ],
   providers: [
     RentalService,
     RentalGuard,
     UcWordsPipe
+  ],
+  schemas: [
+    NO_ERRORS_SCHEMA
   ]
 })
 export class RentalModule { }

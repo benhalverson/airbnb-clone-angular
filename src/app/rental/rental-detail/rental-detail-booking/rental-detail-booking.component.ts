@@ -25,13 +25,13 @@ export class RentalDetailBookingComponent implements OnInit {
   public newBooking: Booking;
   public modalRef: any;
   public errors: any[];
-  // public options: any = {
-  //   locale: { format: 'Y-MM-DD' },
-  //   alwaysShowCalendars: false,
-  //   opens: 'left',
-  //   isInvalidDate: this.checkForInvalidDates.bind(this),
-  //   autoUpdateInput: false,
-  // };
+  public options: any = {
+    locale: { format: 'Y-MM-DD' },
+    alwaysShowCalendars: false,
+    opens: 'left',
+    isInvalidDate: this.checkForInvalidDates.bind(this),
+    autoUpdateInput: false,
+  };
 
   constructor(
     public helper: HelperService,
