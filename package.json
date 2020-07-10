@@ -21,7 +21,7 @@
     "@angular/platform-browser": "8.2.11",
     "@angular/platform-browser-dynamic": "8.2.11",
     "@angular/router": "8.2.11",
-    "@auth0/angular-jwt": "3.0.1",
+    "@auth0/angular-jwt": "5.0.1",
     "@ng-bootstrap/ng-bootstrap": "5.1.1",
     "angular-jwt": "0.1.11",
     "bootstrap": "4.4.1",
