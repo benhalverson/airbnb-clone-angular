@@ -65,7 +65,7 @@
     "typescript": "3.9.6"
   },
   "resolutions": {
-    "https-proxy-agent": "^3.0.0"
+    "https-proxy-agent": "^5.0.0"
   },
   "jest": {
     "preset": "jest-preset-angular",
