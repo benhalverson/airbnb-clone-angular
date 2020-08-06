@@ -25,7 +25,7 @@
     "@auth0/angular-jwt": "5.0.1",
     "@ng-bootstrap/ng-bootstrap": "7.0.0",
     "angular-jwt": "0.1.11",
-    "bootstrap": "4.5.0",
+    "bootstrap": "4.5.2",
     "core-js": "3.6.5",
     "font-awesome": "4.7.0",
     "medium-draft": "0.5.18",
