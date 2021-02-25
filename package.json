@@ -36,7 +36,7 @@
     "ngx-pipes": "2.7.5",
     "ngx-toastr": "13.2.0",
     "rxjs": "6.6.6",
-    "rxjs-compat": "6.6.3",
+    "rxjs-compat": "6.6.6",
     "tslib": "2.1.0",
     "zone.js": "0.11.4"
   },
